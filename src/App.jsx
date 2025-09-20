@@ -6,8 +6,10 @@ function App() {
 
   return (
     <>
-      <Core />
-    </> 
+      <div className='flex flex-col items-center justify-center bg-blue-400'>
+        <Core />
+      </div>  
+    </>
   )
 }
 
