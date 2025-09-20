@@ -2,7 +2,7 @@ export default function Core() {
     const h1class = "text-3xl";
     
     return (
-        <div>
+        <div className="text-center">
             <h1 className={`${h1class} m-5`}>To-Do List</h1>
             <input 
             name="task"
