@@ -12,7 +12,7 @@ export default function Core({ taskdata , onTaskdataChange }) {
             onChange={(e) => onTaskdataChange(e.target.value)}
             onKeyDown={(e) => {
                 if (e.key === 'Enter'){
-                    
+                    alert("shiyas")
                 }
             }}
             className='border rounded-xl px-5 py-2'
