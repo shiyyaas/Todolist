@@ -4,7 +4,7 @@ import Core from './components/Core'
 import Task from './components/Task'
 
 function App() {
-  const [taskdata, setTaskdata] = useState('');
+  const [taskdata, setTaskdata] = useState([]);
   
   return (
     <>
@@ -12,7 +12,6 @@ function App() {
         <Core 
         taskdata={taskdata}
         onTaskdataChange={setTaskdata}/>
-        <Task taskdata={taskdata}/>
       </div>
     </>
   )
