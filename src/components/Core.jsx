@@ -1,28 +1,35 @@
-import Task from './Task'
+import Task from "./Task";
 
-function AddTask(){
-  return(
-    <Task/>
-  )
+export default function Core({ tasks, setTasks }) {
+
+  const addTask = (text) => {
+    if (!text.trim()) return;
+    setTasks([...tasks, text]); // add new task
+  };
+
+  return (
+    <div className="text-center">
+
+      <h1 className="text-3xl m-5">To-Do List</h1>
+
+      <input
+        className="border rounded-xl px-5 py-2"
+        placeholder="Enter the task:"
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            addTask(e.target.value);
+            e.target.value = "";
+          }
+        }}
+      />
+
+      {/* List of tasks */}
+      <div className="mt-6">
+        {tasks.map((t, index) => (
+          <Task key={index} text={t} />
+        ))}
+      </div>
+
+    </div>
+  );
 }
-
-export default function Core({ taskdata , onTaskdataChange }) {
-    const h1class = "text-3xl";  
-    return (
-        <div className="text-center">
-            <h1 className={`${h1class} m-5`}>To-Do List</h1>
-            <input 
-            name="task"
-            value={taskdata}
-            onChange={(e) => onTaskdataChange(e.target.value)}
-            onKeyDown={(e) => {
-                if (e.key === 'Enter'){
-                    alert("shiyas")
-                    AddTask();
-                }
-            }}
-            className='border rounded-xl px-5 py-2'
-            type="text" placeholder='Enter the task :' />
-        </div>
-    )
-  }

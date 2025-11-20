@@ -1,20 +1,15 @@
 import { useState } from 'react'
-import './App.css'
 import Core from './components/Core'
-import Task from './components/Task'
 
 function App() {
-  const [taskdata, setTaskdata] = useState([]);
+  const [tasks, setTasks] = useState([]);
   
+
   return (
-    <>
-      <div className='flex flex-col min-h-screen items-center justify-center bg-blue-400'>
-        <Core 
-        taskdata={taskdata}
-        onTaskdataChange={setTaskdata}/>
-      </div>
-    </>
-  )
+    <div className="flex flex-col min-h-screen items-center justify-center bg-blue-400">
+      <Core tasks={tasks} setTasks={setTasks} />
+    </div>
+  );
 }
 
-export default App
+export default App;
