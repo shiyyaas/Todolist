@@ -7,6 +7,11 @@ export default function Core({ tasks, setTasks }) {
     setTasks([...tasks, text]); // add new task
   };
 
+  const deleteTask = (index) => {
+    const newTasks = tasks.filter((_, i) => i !== index);
+    setTasks(newTasks);
+  };
+
   return (
     <div className="text-center">
 
@@ -26,7 +31,7 @@ export default function Core({ tasks, setTasks }) {
       {/* List of tasks */}
       <div className="mt-6">
         {tasks.map((t, index) => (
-          <Task key={index} text={t} />
+          <Task key={index} text={t} onDelete={() => deleteTask(index)} />
         ))}
       </div>
 
